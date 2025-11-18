@@ -1,164 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>麻倉こはく Official</title>
-  <meta name="description" content="麻倉こはく オフィシャルサイト — プロフィール・写真ギャラリー・SNSリンク" />
-  <style>
-    :root{
-      --bg:#fff6fb;
-      --card:#fff;
-      --accent:#ff7fbf;
-      --accent-2:#ffd9f0;
-      --text:#222;
-      --muted:#666;
-      --radius:16px;
-      --glass: rgba(255,255,255,0.6);
-      font-family: "Hiragino Kaku Gothic ProN", Meiryo, "Yu Gothic", sans-serif;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:var(--text);}
-    .wrap{max-width:980px;margin:36px auto;padding:20px}
-
-    /* header */
-    header{display:flex;gap:16px;align-items:center}
-    .logo{display:flex;flex-direction:column;gap:6px}
-    .site-title{font-size:20px;font-weight:700}
-    .site-sub{font-size:12px;color:var(--muted)}
-
-    /* profile card */
-    .profile{display:grid;grid-template-columns:120px 1fr;gap:18px;background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 8px 24px rgba(0,0,0,0.06);align-items:center}
-    .avatar{width:120px;height:120px;border-radius:14px;overflow:hidden;flex:0 0 120px;background:var(--accent-2);display:flex;align-items:center;justify-content:center}
-    .avatar img{width:100%;height:100%;object-fit:cover}
-    .meta h1{margin:0;font-size:18px}
-    .meta p{margin:6px 0;color:var(--muted)}
-    .tags{display:flex;gap:8px;flex-wrap:wrap}
-    .tag{background:var(--accent-2);padding:6px 10px;border-radius:999px;font-size:13px}
-
-    /* social */
-    .social{margin-top:10px;display:flex;gap:10px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:600;background:var(--accent);color:white}
-    .btn.youtube{background:#FF0000}
-    .btn.twitter{background:#1DA1F2}
-
-    /* gallery */
-    .gallery{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
-    .photo{background:var(--card);border-radius:12px;overflow:hidden;cursor:pointer}
-    .photo img{width:100%;height:160px;object-fit:cover;display:block}
-
-    /* modal */
-    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:60}
-    .modal.open{display:flex}
-    .modal .inner{max-width:92vw;max-height:92vh;border-radius:12px;background:var(--card);padding:12px;display:flex;align-items:center;justify-content:center}
-    .modal img{max-width:90vw;max-height:90vh;object-fit:contain}
-
-    /* footer */
-    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
-
-    /* responsive */
-    @media (max-width:520px){
-      .profile{grid-template-columns:96px 1fr;padding:12px}
-      .avatar{width:96px;height:96px}
-      .photo img{height:120px}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>かわいいホームページ</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #ffe4e1;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #ffb6c1;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+        }
+        .navbar a:hover {
+            background-color: #ff69b4;
+            border-radius: 5px;
+        }
+        .content {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">
-        <div class="site-title">麻倉こはく</div>
-        <div class="site-sub">Official Website</div>
-      </div>
-    </header>
-
-    <!-- PROFILE -->
-    <section class="profile" id="profile">
-      <div class="avatar">
-        <!-- ここにプロフィール画像を置いてください（例: images/avatar.jpg） -->
-        <img src="images/avatar.jpg" alt="麻倉こはく プロフィール写真" onerror="this.style.opacity=0.6" />
-      </div>
-      <div class="meta">
-        <h1>麻倉 こはく（あさくら こはく）</h1>
-        <p>映像と写真を中心に活動しているクリエイター。日常の一瞬を切り取り、温かみのある表現を得意とします。</p>
-        <div class="tags">
-          <span class="tag">映像制作</span>
-          <span class="tag">写真</span>
-          <span class="tag">編集</span>
-        </div>
-
-        <div class="social">
-          <!-- 下の href を実際のアカウントURLに置き換えてください -->
-          <a class="btn twitter" href="https://x.com/MM58Q" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a class="https://www.youtube.com/@589official" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a class="btn Twitch" href="https://www.twitch.tv/58qpro" target="_blank" rel="noopener noreferrer">Twitch</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section style="margin-top:18px">
-      <h2 style="margin:0 0 10px 0">写真ギャラリー</h2>
-      <p style="margin:0 0 12px 0;color:var(--muted)">（クリックで拡大）</p>
-      <div class="gallery" id="gallery">
-        <!-- サムネイル画像を images/photo1.jpg などで用意してください -->
-        <div class="photo"><img src="images/photo1.jpg" alt="作品1" data-full="images/photo1.jpg"></div>
-        <div class="photo"><img src="images/photo2.jpg" alt="作品2" data-full="images/photo2.jpg"></div>
-        <div class="photo"><img src="images/photo3.jpg" alt="作品3" data-full="images/photo3.jpg"></div>
-        <div class="photo"><img src="images/photo4.jpg" alt="作品4" data-full="images/photo4.jpg"></div>
-      </div>
-    </section>
-
-    <!-- SIMPLE CONTACT / FOOTER -->
-    <footer>
-      <p>お問い合わせ：<a href="mailto:info@example.com">info@example.com</a></p>
-      <p>© <span id="year"></span> 麻倉こはく</p>
-    </footer>
-  </div>
-
-  <!-- LIGHTBOX MODAL -->
-  <div class="modal" id="modal" role="dialog" aria-hidden="true">
-    <div class="inner" id="modalInner">
-      <img id="modalImg" src="" alt="拡大画像">
+    <nav class="navbar">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#link">LINK</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#other">OTHER</a>
+    </nav>
+    <div class="content" id="home">
+        <h1>ようこそ！</h1>
+        <p>かわいいホームページへようこそ！</p>
     </div>
-  </div>
-
-  <script>
-    // 年の自動更新
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ギャラリーの拡大処理（簡易ライトボックス）
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modalImg');
-    document.querySelectorAll('#gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        const full = img.dataset.full || img.src;
-        modalImg.src = full;
-        modal.classList.add('open');
-        modal.setAttribute('aria-hidden','false');
-      });
-    });
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal || e.target === modalImg) {
-        modal.classList.remove('open');
-        modal.setAttribute('aria-hidden','true');
-        modalImg.src = '';
-      }
-    });
-
-    // 画像が存在しないときのフォールバック（任意）
-    document.querySelectorAll('img').forEach(i=>{
-      i.addEventListener('error', ()=>{
-        i.style.filter = 'grayscale(40%)';
-      });
-    });
-  </script>
-
-  <!-- 設置時のメモ：
-       1) images/ フォルダに avatar.jpg, photo1.jpg, ... を配置してください。
-       2) Twitter / YouTube のリンクは実際のアカウントURLに置換してください。
-       3) もっと凝ったレイアウトや多言語対応、SNS埋め込み（Twitter timeline等）が必要ならお知らせください。
-  -->
 </body>
 </html>
